@@ -1,0 +1,33 @@
+<div class="card mb-3">
+    <img [src]="imgSrc" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <i class="fa fa-user-circle"></i>
+                UserName: {{user.username}} </li>
+            <li class="list-group-item">
+                <i class="fa fa-at"></i> Email: {{user.email}} </li>
+            <li class="list-group-item">
+                <i class="fa fa-id-card"></i> Id: {{user.id}} </li>
+        </ul>
+        <p class="card-text">
+            <small class="text-muted" (click)="showPreviousUser()"> Previous User |</small>
+            <small class="text-muted" (click)="showPosts()"> Show user's posts |</small>
+            <small class="text-muted" (click)="showNextUser()"> Next User </small>
+        </p>
+    </div>
+</div>
+
+<div *ngIf="userPosts">
+    <div *ngFor="let post of userPosts">
+        <div class="card">
+            <div class="card-header">
+                <span>{{post.title}}</span>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{post.body}}</p>
+            </div>
+        </div>
+    </div>
+</div>

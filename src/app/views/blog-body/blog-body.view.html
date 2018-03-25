@@ -1,0 +1,18 @@
+<div class="container">
+  <div *ngFor=" let post of posts">
+    <div class="card" routerLink="/posts/{{post.id}}">
+      <div class="card-header">
+        <span>{{post.title}}</span>
+        <small class="username">
+          posted by
+          <a routerLink="/card/{{post.userId}}">{{getUsername(post.userId)}}</a>
+          <i class="fa fa-user-circle"></i>
+        </small>
+
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

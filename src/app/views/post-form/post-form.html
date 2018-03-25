@@ -1,0 +1,28 @@
+<div class="container">
+  <form #postForm="ngForm">
+    <div class="form-group">
+      <label for="id"> Post Id: </label>
+      <input class="form-control" type="number" name="userId" #userId="ngModel" [(ngModel)]="post.id" id="id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title: </label>
+      <input class="form-control" type="txt" name="title" #title="ngModel" [(ngModel)]='post.title' id="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="username"> Username: </label>
+      <select class="form-control" id="username" ([ngModel])="post.userId" required>
+        <option *ngFor="let user of users" value={{user.id}}>{{user.username}}</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+      <label for="body">Post body:</label>
+      <textarea class="form-control" rows="5" name="body" #body="ngModel" [(ngModel)]="post.body" id="body" required></textarea>
+    </div>
+
+    <button type="button" class="btn btn-secondary" [disabled]="postForm.invalid" (click)="postNew()"> Post </button>
+  </form>
+</div>

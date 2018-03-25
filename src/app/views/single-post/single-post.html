@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+        <span class="username">
+            posted by {{user.username}}
+            <i class="fa fa-user-circle"></i>
+        </span>
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <p class="card-text">{{post.body}}</p>
+            <a routerLink="/card/{{user.id}}" class="btn btn-secondary">Other posts of this user</a>
+        </div>
+    </div>
